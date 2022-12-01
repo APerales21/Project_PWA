@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Geolocalizacion varios mmarcadores</title>
+    <style>
+        #map{
+            width:100%;
+            height:900px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sucursales </h1>
+    <div Id="map"> </div>
+    <script>
+        function initMap() {
+            //variable que permite inicializar el mapa de preferencia lo mas centrico posible a los lugares que se marcaran
+            21.513943, -104.892607
+            var map = new google.maps.Map(document.getElementById('map'), { zoom: 15, center: { lat: 21.513943, lng: -104.892607 } });
+            //crear variable de tipo arreglo para determinar caracteres alfabeticos para cada marcador
+            var labels = 'ABCDEFGHIJKLMNÑOPQRSTVWXYZ';
+            //añadir al mapa los marcadores en bace al areglo de ubicaciones
+            var markers = locations.map(function (location, i) {
+                return new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length]
+                });
+
+            });
+            var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'img/m' });
+        }//fin funcion initMap
+
+        var locations = [
+            { lat: 21.521768, lng: -104.926201 },
+            { lat: 21.504565, lng: -104.914927 },
+            { lat: 21.503926, lng: -104.899993 },
+            { lat: 21.511432, lng: -104.906516 },
+            { lat: 21.516383, lng: -104.911666 },
+            { lat: 21.519896, lng: -104.914584 },
+            { lat: 21.529318, lng: -104.903769 },
+            { lat: 21.520375, lng: -104.902225 },
+            { lat: 21.516383, lng: -104.901881 },
+            { lat: 21.519417, lng: -104.888663 }
+        ]
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC99WJ4j8SX9l8uYOHfBjGnoW9hYlZUixw&callback=initMap">
+    </script>
+
+</body>
+</html>

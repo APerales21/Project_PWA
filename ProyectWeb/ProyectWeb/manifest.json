@@ -1,0 +1,27 @@
+{
+    "short_name": "Bio_adventure",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "darkgrey",
+    "theme_color": "#2471A3",
+    
+    "icons": [{
+        "src": "Img/Bio512.png",
+        "sizes": "512x512",
+        "tipe": "image/png"
+    },
+    {
+        "src": "Img/Bio256.png",
+        "sizes": "256x256",
+        "tipe": "image/png"
+    },
+    {
+        "src": "Img/Bio128.png",
+        "sizes": "128x128",
+        "tipe": "image/png"
+    }
+    ],
+    "start_url": "./index",
+    "scope": "./"
+
+}
